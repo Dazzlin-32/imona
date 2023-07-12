@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Foto Galeri</title>
+</head>
+<body>
+    <div class="body">
+        <div class="photo-gallery">
+           <div class="title">
+                <p>PHOTO GALLERY</p>
+           </div>
+            <div class="row">
+                <div class="col" ><img id="images" onclick="onClick(this)" src="./assets/one.jpg" alt="" ></div>
+                <div class="col"> <img id="images" onclick="onClick(this)" src="./assets/two.jpg" alt=""/></div>
+                <div class="col"> <img id="images" onclick="onClick(this)" src="./assets/three.jpg"/></div>
+                <div class="col"> <img id="images" onclick="onClick(this)" src="./assets/four.jpg"/></div>
+            </div>
+            <div class="row">
+                <div class="col"> <img onclick="onClick(this)"  src="./assets/five.jpg"  onclick="onClick(this)" alt="" ></div>
+                <div class="col"> <img onclick="onClick(this)"  src="./assets/six.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)"  name="images" src="./assets/seven.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/eight.jpg" alt=""/></div>
+            </div>
+
+            <div class="row">
+                <div class="col"> <img onclick="onClick(this)" src="./assets/nine.jpg" alt="" ></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/ten.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/eleven.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/twelve.jpg" alt=""/></div>
+            </div>
+
+            <div class="row">
+                <div class="col"> <img onclick="onClick(this)" src="./assets/thirteen.jpg" alt="" ></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/fourteen.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/fifteen.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/sixteen.jpg" alt=""/></div>
+            </div>
+
+            <div class="row">
+                <div class="col"> <img onclick="onClick(this)" src="./assets/seven.jpg" alt="" ></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/eighteen.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/nineteen.jpg" alt=""/></div>
+                <div class="col"> <img onclick="onClick(this)" src="./assets/twenty.jpg" alt=""/></div>
+            </div>
+
+            <!-- POPUP -->
+            <div class="popup" id="popup" onclick="this.style.visibility= 'hidden'" >
+                <span class="popImage" id="popImage" ><img class="clickedImage" id='popedupImage' src="./assets/nine.jpg" alt=""></span>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // function popUp(){
+        //     var popup = document.getElementById("popImage");
+        //     console.log("before src assign " + document.getElementById('popedupImage').src)
+        //     document.getElementById('popedupImage').src= photoLink
+        //     console.log("AFter src assign " + document.getElementById('popedupImage').src)
+            
+        //     popup.classList.toggle("show");
+
+        // }
+        // function imgClicked () {
+        //    
+        // }
+        // Get the modal container
+        function onClick(element) {
+                document.getElementById("popedupImage").src = element.src;
+                //document.getElementById("modal01").style.display = "block";
+                console.log(document.getElementById("popedupImage").src)
+                document.getElementById("popup").style.visibility = 'visible'
+                }
+    </script>
+</body>
+</html>

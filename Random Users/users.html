@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Random Users</title>
+</head>
+<body>
+    <div class="body">
+        <div class="box">
+            <input class="input" id="input" placeholder="Enter number of random users" value="">
+             </input>
+            <button class="button" onclick="usersRandom()">Generate</button>
+            <button class="button" onclick=usersClear()>Clear</button>
+        </div>
+        <br/>
+        <div class="users" >
+            <div class="row" id="row">
+
+            </div>
+        </div>
+
+     
+    </div>
+    <script>
+        
+        async function usersRandom(){
+            document.getElementById('row').style.visibility = 'visible';
+            const results = document.getElementById('row')
+            var lists;
+            const number = document.getElementById('input').value;
+            if(number>0 && number <5001){
+           await fetch('https://randomuser.me/api/?results='+number)
+                .then(response =>{ return response.json()})
+                .then(data => {
+                    console.log(data.results)
+                    console.log(number)
+                    for( i = 0; i <= data.results.length; i++)
+                    {
+                        console.log(data.results[i])
+                        console.log(data.results[i].picture.thumbnail)
+                        lists = `<div class='col'> <img class="profilePic" src='${data.results[i].picture.thumbnail}' />
+                                                        <p> ${data.results[i].name.title} ${data.results[i].name.first} ${data.results[i].name.last}</p>
+                                                        <p> ${data.results[i].gender.toUpperCase()}</p>
+                                                        <p> ${data.results[i].email}</p>
+                             </div>
+                                         `
+                        results.insertAdjacentHTML('beforeend', lists);
+                    }
+                    
+                })
+                .catch(e=>{console.log(e)})  
+            }
+            else {
+                alert("Enter number between 1 and 5000!")
+            }  
+            document.querySelector('input').value = null;
+        }
+        function usersClear(){
+            const element = document.getElementById('.col');
+            // element.remove();
+            // console.log('button clicked!')
+            document.getElementById('row').style.visibility = 'hidden';
+                }
+  
+    </script>
+</body>
+</html>

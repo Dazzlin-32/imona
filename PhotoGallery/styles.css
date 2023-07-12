@@ -1,0 +1,111 @@
+*{
+    background-color: black;
+}
+.body{
+ margin: auto;
+ justify-content: center;
+}
+.title {
+    color: white;
+    font-size: 30px;
+
+}
+
+.photo-gallery{
+    /* border: 1px solid white; */
+    margin: 6vh;
+    margin-top: 10vh;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 150px;
+    /* border: 1px solid blue; */
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    /* border:  2px solid red; */
+    width: 100%;
+    object-fit: contain;
+    padding: 0px;
+    padding: 5px;
+}
+
+.col img:hover{
+transform: scale(1.1,1.1);
+
+}
+
+img {
+    height: 100%;
+    width: inherit;
+    object-fit: initial;
+
+}
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+  }
+  
+.popup {
+    visibility: hidden;
+    height: 70%;
+    width: 95%;
+    background-color: #020202b7;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 10em;
+   
+    /* margin-left: -80px; */
+  }
+.popImage::after {
+    content: "";
+    /* position: absolute;
+    top: 100%;
+    left: 90%; */
+    margin: auto;
+    /* border-width: 5px; */
+    /* border-style: solid;
+    border-color: #555 transparent transparent transparent; */
+  }
+  .popImage .clickedImage {
+    width: 60%;
+    height: 80%;
+    position: relative;
+    top: 2em;
+  }
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+.clickedImage {
+    width: 100%;
+  }
+  
